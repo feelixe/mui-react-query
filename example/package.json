@@ -1,0 +1,17 @@
+{
+  "name": "example",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "parcel index.html --no-cache",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "mui-react-query": "file:.."
+  }
+}
