@@ -2,11 +2,12 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import * as React from 'react';
 import {
   MutationButton,
-  MutationLinearProgress,
-  MutationCircularProgress,
+  LinearProgress,
+  CircularProgress,
   QueryAutoComplete,
   QueryRefetchButton,
   QueryRefetchIconButton,
+  GlobalQueryMutationCircularProgress,
 } from 'mui-react-query';
 import { sleep } from './sleep';
 import { Refresh } from '@mui/icons-material';
@@ -31,13 +32,15 @@ export function Home() {
 
   return (
     <div>
-      <MutationLinearProgress mutation={mutation} />
-      <MutationCircularProgress mutation={mutation} />
+      <GlobalQueryMutationCircularProgress sx={{position: 'fixed', top: 10, right: 10 }} size={20} />
+      <LinearProgress mutation={mutation} />
+      <CircularProgress mutation={mutation} />
+      <LinearProgress query={query} />
+      <CircularProgress query={query} showOnFetching />
       <QueryRefetchButton query={query} variant='contained'>Reload</QueryRefetchButton>
       <QueryRefetchIconButton query={query}><Refresh /></QueryRefetchIconButton>
       <MutationButton onClick={() => mutation.mutate()} mutation={mutation} variant='contained'>Start loading</MutationButton>
       <QueryAutoComplete query={query} getOptionLabel={(o) => o.name} />
-      
     </div>
   );
 }
