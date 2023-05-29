@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { ExtendButton } from '@mui/material';
 import { LoadingButton, LoadingButtonTypeMap } from '@mui/lab';
-import { UseQueryResult } from '@tanstack/react-query';
+import { Query } from './types';
 
 type LoadingButtonProps = Parameters<ExtendButton<LoadingButtonTypeMap>>[0]
 
 export type QueryRefetchButtonProps = LoadingButtonProps & {
   loadingOnFetching?: boolean;
   disabledOnFetching?: boolean;
-  query: UseQueryResult
+  query: Query
 };
 
 export function QueryRefetchButton(props: QueryRefetchButtonProps){

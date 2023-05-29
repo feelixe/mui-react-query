@@ -1,14 +1,13 @@
 import * as React from 'react';
 import { AutocompleteProps, ChipTypeMap, Autocomplete as MuiAutoComplete, TextField } from '@mui/material';
-import { UseQueryResult } from '@tanstack/react-query';
-
+import { Query } from './types';
 
 export type QueryAutoCompleteProps<T extends any[],
 Multiple extends boolean | undefined = false,
 DisableClearable extends boolean | undefined = false,
 FreeSolo extends boolean | undefined = false,
 ChipComponent extends React.ElementType = ChipTypeMap['defaultComponent']> = Partial<AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>> & {
-  query: UseQueryResult<T>
+  query: Query
 }
 
 export function QueryAutoComplete<

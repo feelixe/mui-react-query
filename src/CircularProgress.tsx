@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { CircularProgress as MuiCircularProgress, CircularProgressProps } from '@mui/material';
-import { UseMutationResult, UseQueryResult } from '@tanstack/react-query';
+import { Mutation, Query } from './types';
 
 type MutationCircularProgressProps = CircularProgressProps & ({
-  mutation: UseMutationResult<any, unknown, void, unknown>;
-} | { query: UseQueryResult, showOnFetching?: boolean })
+  mutation: Mutation;
+} | { query: Query, showOnFetching?: boolean })
 
 export function CircularProgress(props: MutationCircularProgressProps){
   if('mutation' in props) {

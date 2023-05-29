@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { IconButton, IconButtonProps } from '@mui/material';
-import { UseQueryResult } from '@tanstack/react-query';
+import { Query } from './types';
 
 export type QueryRefetchButtonIconProps = Omit<IconButtonProps, 'children'> & {
   disabledOnFetching?: boolean;
-  query: UseQueryResult,
+  query: Query,
   children: React.ReactElement
 };
 

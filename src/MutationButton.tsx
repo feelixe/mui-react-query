@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { ExtendButton } from '@mui/material';
 import { LoadingButton, LoadingButtonTypeMap } from '@mui/lab';
-import { UseMutationResult } from '@tanstack/react-query';
+import { Mutation } from './types';
 
 type LoadingButtonProps = Parameters<ExtendButton<LoadingButtonTypeMap>>[0]
 
 export type MutationButtonProps = LoadingButtonProps & {
   disabledOnLoading?: boolean;
-  mutation: UseMutationResult<any, unknown, void, unknown>;
+  mutation: Mutation;
 };
 
 export function MutationButton(props: MutationButtonProps){
